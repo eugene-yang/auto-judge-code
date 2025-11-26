@@ -12,7 +12,6 @@ def load_run_failsave(path: Path):
 
     ret = []
     with open(path, 'r') as f:
-        print(path)
         for l in f:
             try:
                 l = json.loads(l)
@@ -21,7 +20,7 @@ def load_run_failsave(path: Path):
             for required_field in _REQUIRED_FIELDS:
                 if required_field not in l:
                     continue
-            l["path"] = path
+            l["path"] = str(path.absolute())
             ret.append(l)
 
     return ret

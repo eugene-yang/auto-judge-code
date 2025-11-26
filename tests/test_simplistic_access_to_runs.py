@@ -21,5 +21,5 @@ class TestSimplisticAccessToRuns(unittest.TestCase):
         actual = load_runs_failsave(Path(__file__).parent.parent / "trec25" / "spot-check-dataset")
         self.assertEqual(2, len(actual))
         self.assertEqual(expected_metadata, [i["metadata"] for i in actual])
-        self.assertEqual(expected_paths, [i["path"].name for i in actual])
+        self.assertEqual(expected_paths, [Path(i["path"]).name for i in actual])
 

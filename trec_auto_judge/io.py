@@ -4,7 +4,7 @@ import json
 from collections import defaultdict
 
 # TODO: Incorporate the pydantic file that Laura shared.
-_REQUIRED_FIELDS = ["metadata", "responses"]
+_REQUIRED_FIELDS = ["metadata", "responses", "answer"]
 
 
 def load_run_failsave(path: Path):
@@ -18,6 +18,10 @@ def load_run_failsave(path: Path):
                 l = json.loads(l)
             except:
                 continue
+            if "responses" in l and "answer" not in l:
+                l["answer"] = l["responses"]
+            if "answer" in l and "responses" not in l:
+                l["responses"] = l["answer"]
             for required_field in _REQUIRED_FIELDS:
                 if required_field not in l:
                     continue

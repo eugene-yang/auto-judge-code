@@ -16,7 +16,7 @@ Every approach is developed inside its own repository. We have some low-dependen
 
 - [naive](naive): A naive auto-judge assessor that provides random or naive judgments
 - axiomatic: ToDo Maik + Heinrich ir-axioms/RAG-Axioms applied without modification
-- LLM-prompt baselines: something that allows to sutdy prompt variants and LLM variants
+- LLM-prompt baselines: something that allows to study prompt variants and LLM variants
 - ...
 
 For every approach, we try to keep their CLI usage consistent so that they can be easily exchanges.

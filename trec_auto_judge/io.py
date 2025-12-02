@@ -47,7 +47,7 @@ def load_run_failsave(path: Path):
                 raise ValueError(f"Inconsistent metadata: {l['metadata']}")
 
 
-            l["path"] = str(path.absolute())
+            l["path"] = str(path.absolute()).replace(".jsonl", "")
             ret.append(l)
 
     return ret

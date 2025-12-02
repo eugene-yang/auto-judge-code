@@ -2,7 +2,7 @@ import click
 from pathlib import Path
 import pandas as pd
 from ..evaluation import TrecLeaderboardEvaluation
-from typing import Any, List, Optional
+from typing import List, Optional
 from tira.io_utils import to_prototext
 
 
@@ -59,7 +59,7 @@ def evaluate(truth_leaderboard: Optional[Path], truth_metric: Optional[str], inp
         result = te.evaluate(c)
 
         for i in result:
-            tmp = {"Judge": c.name, "Metric": i}
+            tmp = {"Judge": c.name.replace(".txt", ""), "Metric": i}
             for k, v in result[i].items():
                 tmp[k] = v
             df.append(tmp)

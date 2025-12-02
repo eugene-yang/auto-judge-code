@@ -80,3 +80,36 @@ where:
 
 The invocation above assumes an Oracle LLM Judge that outputs the ground-truth-leaderboard. Therefore, the `Measure-01` yields perfect correlations.
 
+# Admin Section
+
+The following contains the hugging-face format definition of this dataset that you can use to declaratively upload the dataset with evaluation configuration to tira. Step by step guides on how to upload are in [../README.md](../README.md):
+
+---
+configs:
+- config_name: inputs
+  data_files:
+  - split: train
+    path: ["corpus.jsonl.gz", "queries.jsonl"]
+- config_name: truths
+  data_files:
+  - split: test
+    path: ["trec-leaberboard"]
+
+tira_configs:
+  resolve_inputs_to: "."
+  resolve_truths_to: "."
+  baseline:
+    link: https://github.com/reneuir/lsr-benchmark/tree/main/step-03-retrieval-approaches/pyterrier-naive
+    command: /run-pyterrier.py --dataset $inputDataset --retrieval BM25 --output $outputDir
+    format:
+      name: ["run.txt", "lightning-ir-document-embeddings", "lightning-ir-query-embeddings"]
+  input_format:
+    name: "lsr-benchmark-inputs"
+    config:
+      max_size_mb: 800
+  truth_format:
+    name: "qrels.txt"
+  evaluator:
+    measures: ["nDCG@10","P@10"]
+---
+

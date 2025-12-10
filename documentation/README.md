@@ -209,29 +209,24 @@ The output should look like:
 
 </details>
 
-
 <details>
 <summary>Step 4: Upload Your System to TIRA</summary>
 
 Please re-execute the command above but remove the `--dry-run` flag, this will additionaly upload the system to TIRA. The output should look like:
 
 <img width="1230" height="336" alt="Screenshot_20251210_220112" src="https://github.com/user-attachments/assets/0a53a83c-954d-46cf-8c92-60e61907edbf" />
+
 </details
 
-
+.
 
 <details>
 <summary>Step 5: Run Your System in TIRA</summary>
 
-
-- Navigate to the TREC AutoJudge task in TIRA [https://www.tira.io/task-overview/trec-auto-judge](https://www.tira.io/task-overview/trec-auto-judge)
-- Click on "submit" => "Code Submissions"
-- Select your Submission
-
-Then, you can select on datasets using which resources your approach should be executed within TIRA. We aim to run every submitted system on all datasets.
+Please navigate to the TREC AutoJudge task in TIRA [https://www.tira.io/task-overview/trec-auto-judge](https://www.tira.io/task-overview/trec-auto-judge) and click on "submit" and "Code Submissions". Then select your submission. You can select on datasets using which resources your approach should be executed within TIRA. This looks like:
 
 <img width="1851" height="733" alt="Screenshot_20251210_220656" src="https://github.com/user-attachments/assets/e33e270a-bed9-4b48-9ac7-338d6e6fa4b1" />
 
+We aim to run every submitted system on all datasets.
+
 </details>
-
-

@@ -36,7 +36,51 @@ A manual submission has the following two files:
 └── trec-leaderboard.txt
 ```
 
-where xy.
+where `ir-metadata.yml` describes the approach in the [ir_metadata format](https://www.ir-metadata.org/) (**attention: we still need to discuss which fields we want to make mandatory, currently nothing is mandatory**) and `trec-leaderboard.txt` is in a [format congruent to trec_eval -q](https://github.com/trec-auto-judge/auto-judge-code/tree/main/trec25/datasets/spot-check-dataset#formats).
 
+<details>
+<summary>Step 1: Authentication and Login</summary>
+
+We assume you have created an account at TIRA.io and have registered a team to TREC AutoJudge following the prerequisite above.
+
+The preferred way to upload a submission to TIRA is via the command line interface, as this already can check that everything is in the correct format on your side.
+
+Please install the TIRA cli via:
+
+```
+pip3 install --upgrade tira
+```
+
+Next, you need an authentication token:
+
+- Navigate to the TREC AutoJudge task in TIRA [https://www.tira.io/task-overview/trec-auto-judge](https://www.tira.io/task-overview/trec-auto-judge)
+- Click on "submit" => "Run Uploads" => "I want to upload runs via the command line". The UI shows your authentication token:
+
+<img width="1964" height="503" alt="Screenshot_20251210_095119" src="https://github.com/user-attachments/assets/12e55ed2-a670-473c-ac4d-748a169afefa" />
+
+Assuming your authentication token is AUTH-TOKEN, please authenticate via:
+
+```
+tira-cli login --token AUTH-TOKEN
+```
+
+Lastly, to verify that everything is correct, please run `tira-cli verify-installation`. Outputs might look like:
+
+<img width="821" height="180" alt="Screenshot_20251210_095410" src="https://github.com/user-attachments/assets/51160132-eb19-4da3-8892-8a53adb41c71" />
+
+</details>
+
+
+<details>
+<summary>Step 2: Upload your Submission</summary>
+
+Assuming you have your run 
+
+</details>
+
+<details>
+<summary>Alternative: Upload your Submission via the UI</summary>
+TBD ...
+</details>
 
 ## Submission Variant 2: Code Submissions

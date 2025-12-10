@@ -38,6 +38,8 @@ A manual submission has the following two files:
 
 where `ir-metadata.yml` describes the approach in the [ir_metadata format](https://www.ir-metadata.org/) (**attention: we still need to discuss which fields we want to make mandatory, currently nothing is mandatory**) and `trec-leaderboard.txt` is in a [format congruent to trec_eval -q](https://github.com/trec-auto-judge/auto-judge-code/tree/main/trec25/datasets/spot-check-dataset#formats).
 
+The directory [leaderboard-upload-skeleton](leaderboard-upload-skeleton) contains an example that you can use as starter.
+
 <details>
 <summary>Step 1: Authentication and Login</summary>
 
@@ -75,6 +77,10 @@ Lastly, to verify that everything is correct, please run `tira-cli verify-instal
 <summary>Step 2: Upload your Submission</summary>
 
 Assuming you have your run 
+
+```
+tira-cli upload --dataset foo --directory leaderboard-upload-skeleton
+```
 
 </details>
 

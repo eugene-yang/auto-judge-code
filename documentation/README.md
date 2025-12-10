@@ -106,5 +106,26 @@ TBD ...
 
 We would like to collect approaches via pull requests into this repository via this structure:
 
+<img width="232" height="271" alt="Screenshot_20251210_134435" src="https://github.com/user-attachments/assets/2e60977f-1478-4750-b6fe-ac8399d890ba" />
 
+I.e., we aim that for each year, we collect the systems in an "append only" mono repository. Please note: You can also work in a private repository, so it is not required that you contribute your code to this repository, but in cases where contributing code to this repository makes sense, please do not hesitate to do so.
+
+### Requirements to Code Submissions
+
+Each system (i.e., a directory like `trec25/my-judge-system` in the structure above) is developed inside its directory as a stand-alone solution. To allow for a maximum flexibility, we aim to make as few requirements to each system as possible. We still have some requirements to ensure that everything is easily maintainable and submittable to TIRA, but it is totally fine when you do not take care on this yourself, and we take care of this (e.g., you can just add the code as you like it, and we add the additional stuff that is required). Our requirements to a code submission (we can help to meet them) are:
+
+- All code must be organized in the repository
+- The repository must be clean (i.e., git status indicates no uncommitted chages
+- The code must be compatible with the [dev-container standard](https://containers.dev/)
+
+As soon as those requirements are met, a code submission to TIRA performs the following steps:
+
+- The code is compiled into the Docker image as specified by the dev-container
+- This image is tested on the local machine on the spot-check dataset to ensure that the software produces valid outputs
+- If the outputs are valid, the docker image is uploaded to TIRA
+- Within TIRA, we/you run the docker image on all datasets
+
+### Step-by-Step Example
+
+In the following, we will use the Naive AutoJudge system in [../trec25/judges/naive](../trec25/judges/naive) as an hello world example. You can perform all steps below and just re-submit this system to TIRA to ensure everything works on your side and then switch to your system. (Alternatively, you can also add your code to this repository via a pull request and we conduct the steps for doing the code submissions, as long as there is enough time to the deadline we should always be able to help with this.)
 

@@ -1,0 +1,11 @@
+git+https://github.com/trec-auto-judge/auto-judge-code.git
+git+https://github.com/hltcoe/auto-argue
+langchain==0.3.25
+langchain-core==0.3.63
+langchain-anthropic==0.3.12
+langchain-community==0.3.23
+langchain-huggingface==0.2.0
+langchain-openai==0.3.16
+langchain-text-splitters==0.3.8
+langchain-together==0.3.0
+tqdm
